@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EyeTracker>Tobii</EyeTracker>
+  <BufferSize>20</BufferSize>
+  <PixelRange>40</PixelRange>
+  <CursorUpdate>1</CursorUpdate>
+  <OffScreenGlanceDist>50</OffScreenGlanceDist>
+  <DwellClickDelay>700</DwellClickDelay>
+  <G9DwellTime>700</G9DwellTime>
+</Configuration>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EyeTrackerAddress>TX120-203-74600067.local.</EyeTrackerAddress>
+  <BufferSize>20</BufferSize>
+  <PixelRange>30</PixelRange>
+  <CursorUpdate>10</CursorUpdate>
+  <DoubleBuffered>true</DoubleBuffered>
+  <OffScreenGlanceDist>70</OffScreenGlanceDist>
+  <DwellClickDelay>700</DwellClickDelay>
+  <MagnifierWidth>300</MagnifierWidth>
+  <MagnifierHeight>150</MagnifierHeight>
+  <MinimizeOnStart>true</MinimizeOnStart>
+  <ZoomFactor>2</ZoomFactor>
+  <SpeedFactor>0.5</SpeedFactor>
+  <OffGlassGlanceDist>0</OffGlassGlanceDist>
+  <UseMagnifier>true</UseMagnifier>
+  <MagnifierButtonPosX>1270</MagnifierButtonPosX>
+  <MagnifierButtonPosY>100</MagnifierButtonPosY>
+  <MagnifierButtonWidth>150</MagnifierButtonWidth>
+  <MagnifierButtonHeight>150</MagnifierButtonHeight>
+  <UseG9Text>true</UseG9Text>
+  <G9ButtonPosX>550</G9ButtonPosX>
+  <G9ButtonPosY>100</G9ButtonPosY>
+  <G9ButtonWidth>150</G9ButtonWidth>
+  <G9ButtonHeight>150</G9ButtonHeight>
+  <G9DwellTime>500</G9DwellTime>
+</Configuration>

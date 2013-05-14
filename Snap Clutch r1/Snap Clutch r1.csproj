@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B833883F-6BF6-40A9-94C7-62B093D48BAE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SnapClutch</RootNamespace>
+    <AssemblyName>Snap Clutch</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <StartupObject>SnapClutch.Program</StartupObject>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.1.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="AxInterop.TetComp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Interop.TetComp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Kennedy.ManagedHooks, Version=1.2.0.10, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationLauncher.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CircularList.cs" />
+    <Compile Include="Diagnostic\SemiTranspZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diagnostic\SemiTranspZone.designer.cs">
+      <DependentUpon>SemiTranspZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diagnostic\Zones.cs" />
+    <Compile Include="FixationDataPoint.cs" />
+    <Compile Include="FixationEngine.cs" />
+    <Compile Include="Modes\Cat B\ModeMouseLookAroundCatB.cs" />
+    <Compile Include="Modes\Cat B\ModeMouseLocomotionCatB.cs" />
+    <Compile Include="Modes\Cat B\ModeKeyLookAroundCatB.cs" />
+    <Compile Include="Modes\Cat C\ModeKeyLocomotionCatC.cs" />
+    <Compile Include="Modes\Cat C\ModeKeyLookAroundCatC.cs" />
+    <Compile Include="Modes\ModeBlank.cs" />
+    <Compile Include="Modes\EyeGuitar\frmMattTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modes\EyeGuitar\frmMattTest.designer.cs">
+      <DependentUpon>frmMattTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modes\EyeGuitar\guitarOSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modes\EyeGuitar\guitarOSD.designer.cs">
+      <DependentUpon>guitarOSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modes\EyeGuitar\ModeStrings.cs" />
+    <Compile Include="Modes\EyeGuitar\StringButton.cs" />
+    <Compile Include="Modes\EyeGuitar\StringPoint.cs" />
+    <Compile Include="Modes\JoystickToolglass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modes\JoystickToolglass.Designer.cs">
+      <DependentUpon>JoystickToolglass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modes\ModeJoystickLocomotion.cs" />
+    <Compile Include="Modes\ModeLocomotionBlinkAttack.cs" />
+    <Compile Include="Modes\Cat B\ModeKeyLocomotionCatB.cs" />
+    <Compile Include="Modes\ModeMouseCameraControl.cs" />
+    <Compile Include="Modes\ModeCameraControl.cs" />
+    <Compile Include="Modes\ModeMouseLocomotionFPS.cs" />
+    <Compile Include="Modes\ModeMouseLookAroundFPS.cs" />
+    <Compile Include="SCMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCMessage.Designer.cs">
+      <DependentUpon>SCMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modes\CompatibleGame.cs" />
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="G9CSharp\G9DictionaryCS.cs" />
+    <Compile Include="G9CSharp\G9IteratorCS.cs" />
+    <Compile Include="G9CSharp\G9TextFormCS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G9CSharp\G9TextFormCS.Designer.cs">
+      <DependentUpon>G9TextFormCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G9CSharp\G9WordCS.cs" />
+    <Compile Include="Modes\ModeSwitchLeftClick.cs" />
+    <Compile Include="Modes\Cat A\ModeMouseLocomotionCatA.cs" />
+    <Compile Include="Modes\ModeSet.cs" />
+    <Compile Include="Modes\ModeSnapClutch.cs" />
+    <Compile Include="Modes\ModeIndicator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modes\ModeIndicator.Designer.cs">
+      <DependentUpon>ModeIndicator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modes\Cat A\ModeMouseLookAroundCatA.cs" />
+    <Compile Include="Modes\Cat A\ModeKeyLocomotionCatA.cs" />
+    <Compile Include="Modes\Cat A\ModeKeyLookAroundCatA.cs" />
+    <Compile Include="Modes\ModeLeftDrag.cs" />
+    <Compile Include="Modes\ModeOffSmallCursor.cs" />
+    <Compile Include="Modes\ModeDwellClickRight.cs" />
+    <Compile Include="Modes\Mode.cs" />
+    <Compile Include="Modes\ModeCollection.cs" />
+    <Compile Include="Modes\ModeDwellClickLeft.cs" />
+    <Compile Include="Modes\ProfileCollections.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SCModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GazeEngine.cs" />
+    <Compile Include="MovingAverage.cs" />
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagnostic\SemiTranspZone.resx">
+      <DependentUpon>SemiTranspZone.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modes\EyeGuitar\frmMattTest.resx">
+      <DependentUpon>frmMattTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modes\EyeGuitar\guitarOSD.resx">
+      <DependentUpon>guitarOSD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modes\JoystickToolglass.resx">
+      <DependentUpon>JoystickToolglass.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCMessage.resx">
+      <DependentUpon>SCMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G9CSharp\G9TextFormCS.resx">
+      <DependentUpon>G9TextFormCS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modes\ModeIndicator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ModeIndicator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleStatus.resx">
+      <DependentUpon>SimpleStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrackStatus.resx">
+      <DependentUpon>TrackStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="SCTools\InputControl.cs" />
+    <Compile Include="SCTools\CursorFactory.cs" />
+    <Compile Include="SCTools\CursorSnapClutch.cs" />
+    <Compile Include="SCTools\GazeOverlay.cs" />
+    <Compile Include="SCTools\KeyEvent.cs" />
+    <Compile Include="SCTools\MouseEvent.cs" />
+    <Compile Include="SCTools\SnapClutchSounds.cs" />
+    <Compile Include="Config\XmlUtility.cs" />
+    <Compile Include="SimpleStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleStatus.Designer.cs">
+      <DependentUpon>SimpleStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TetServiceEntryWrapper.cs" />
+    <Compile Include="TrackStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrackStatus.Designer.cs">
+      <DependentUpon>TrackStatus.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParkInactive.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlankCursor.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Default.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DragActive.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DragInactive.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DwellClick.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DwellClickLeft.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DwellClickLeftDown.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DwellClickRight.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DwellClickRightDown.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EyeControlOff.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EyeControlOffSmall.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Locomotion.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LookAround.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParkActive.cur">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="configData.xsd" />
+    <None Include="Cursors\Pulse.ani">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="License.rtf" />
+    <None Include="Resources\magnifierGlassPlain.png" />
+    <None Include="Resources\magnifierGlass.png" />
+    <None Include="Resources\magnifierGlassBlue.png" />
+    <Content Include="500words.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="configData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Pulse.ani">
+    </None>
+    <None Include="Resources\TetCompMergeModule.msm" />
+    <None Include="Resources\zap4.wav" />
+    <None Include="Resources\bloop2.wav" />
+    <None Include="Resources\switch4.wav" />
+    <None Include="Resources\zap1.wav" />
+    <None Include="Resources\ToolglassParked.cur">
+    </None>
+    <None Include="Resources\Monitor.GIF" />
+    <None Include="Resources\Monitor.bmp" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Cursors\BlankCursor.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\ToolglassParked.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Default.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\DragActive.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\DragInactive.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\DwellClick.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\DwellClickLeft.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\DwellClickLeftDown.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\DwellClickRight.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\DwellClickRightDown.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\EyeControlOff.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\EyeControlOffSmall.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Locomotion.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\LookAround.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\ParkActive.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\ParkInactive.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\footprint.jpeg" />
+    <None Include="Resources\backwards.bmp" />
+    <None Include="Resources\forward.bmp" />
+    <None Include="Resources\forwardleft.bmp" />
+    <None Include="Resources\forwardright.bmp" />
+    <Content Include="Resources\JoyCentre.bmp" />
+    <None Include="Resources\right-foot-print.png" />
+    <None Include="Resources\rotate-arrows.jpg" />
+    <Content Include="References\AxInterop.TetComp.dll" />
+    <Content Include="References\G9Engine.dll" />
+    <Content Include="References\G9Keyboard.dll" />
+    <Content Include="References\GazeTrackerUDPClient.dll" />
+    <Content Include="References\Interop.TetComp.dll" />
+    <Content Include="References\Kennedy.ManagedHooks.dll" />
+    <Content Include="References\MouseKeyboardLibrary.dll" />
+    <None Include="Resources\magnifierGlass16to9.png" />
+    <None Include="Resources\keyboard.jpg" />
+    <Content Include="References\SCTools.dll" />
+    <None Include="Resources\ButtonDownGreen.png" />
+    <None Include="Resources\ButtonDownRed.png" />
+    <None Include="Resources\ButtonUpGreen.png" />
+    <None Include="Resources\ButtonUpRed.png" />
+    <None Include="Resources\ButtonUp.png" />
+    <None Include="Resources\AnotherTarget.bmp" />
+    <None Include="Resources\dmu_logo.gif" />
+    <None Include="Resources\logo_tampere.gif" />
+    <None Include="Resources\cogain_logo.gif" />
+    <Content Include="Resources\CLICK14A.WAV" />
+    <Content Include="Resources\CLICK16A.WAV" />
+    <None Include="Resources\keypress.wav" />
+    <None Include="Resources\Icon2.ico" />
+    <None Include="Resources\down_arrow.gif" />
+    <None Include="Resources\down_arrow2.png" />
+    <None Include="Resources\left.bmp" />
+    <Content Include="Resources\magnifierGlassPlainParked.png" />
+    <None Include="Resources\up_arrow2.png" />
+    <None Include="Resources\right.bmp" />
+    <Content Include="SystemHookCore.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.txt" />
+    <None Include="Resources\magnifierGlassPlainParked2.png" />
+    <None Include="Resources\magnifying_glass.png" />
+    <None Include="Resources\single_key.png" />
+    <None Include="Resources\TargetRed.gif" />
+    <None Include="Resources\TargetRedPng.png" />
+    <None Include="Resources\TargetRed2.gif" />
+    <None Include="Resources\TargetRed2.png" />
+    <None Include="Resources\TargetRed2.bmp" />
+    <None Include="Resources\MonitorPng.png" />
+    <None Include="Resources\MonitorPng2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SpeechLib">
+      <Guid>{C866CA3A-32F7-11D2-9602-00C04F8EE628}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gesture Interface\Gesture Interface.csproj">
+      <Project>{16ED01D0-3E4B-4E00-ADA5-3BFF0BFBEA08}</Project>
+      <Name>Gesture Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
