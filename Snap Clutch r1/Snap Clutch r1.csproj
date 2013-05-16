@@ -112,6 +112,8 @@
     <Compile Include="Diagnostic\Zones.cs" />
     <Compile Include="FixationDataPoint.cs" />
     <Compile Include="FixationEngine.cs" />
+    <Compile Include="Modes\ModeMinecraftLookGazeOnly.cs" />
+    <Compile Include="Modes\ModeMinecraftLocoGazeOnly.cs" />
     <Compile Include="Modes\Cat B\ModeMouseLookAroundCatB.cs" />
     <Compile Include="Modes\Cat B\ModeMouseLocomotionCatB.cs" />
     <Compile Include="Modes\Cat B\ModeKeyLookAroundCatB.cs" />

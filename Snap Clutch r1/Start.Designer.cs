@@ -53,6 +53,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonGesturePreset = new System.Windows.Forms.Button();
             this.buttonDefault = new System.Windows.Forms.Button();
             this.buttonWowExp = new System.Windows.Forms.Button();
             this.buttonWowSafe = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@
             this.buttonActivateMode = new System.Windows.Forms.Button();
             this.pictureBoxMonitor = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.checkBoxGestures = new System.Windows.Forms.CheckBox();
             this.buttonGestures = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -95,8 +97,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.timerGazeData = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonGesturePreset = new System.Windows.Forms.Button();
-            this.checkBoxGestures = new System.Windows.Forms.CheckBox();
+            this.buttonMine = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -354,6 +355,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.buttonGesturePreset);
+            this.groupBox4.Controls.Add(this.buttonMine);
             this.groupBox4.Controls.Add(this.buttonDefault);
             this.groupBox4.Controls.Add(this.buttonWowExp);
             this.groupBox4.Controls.Add(this.buttonWowSafe);
@@ -366,10 +368,21 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Presets";
             // 
+            // buttonGesturePreset
+            // 
+            this.buttonGesturePreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGesturePreset.Location = new System.Drawing.Point(12, 45);
+            this.buttonGesturePreset.Name = "buttonGesturePreset";
+            this.buttonGesturePreset.Size = new System.Drawing.Size(116, 23);
+            this.buttonGesturePreset.TabIndex = 14;
+            this.buttonGesturePreset.Text = "Gaze Off!";
+            this.buttonGesturePreset.UseVisualStyleBackColor = true;
+            this.buttonGesturePreset.Click += new System.EventHandler(this.buttonGesturePreset_Click);
+            // 
             // buttonDefault
             // 
             this.buttonDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDefault.Location = new System.Drawing.Point(134, 46);
+            this.buttonDefault.Location = new System.Drawing.Point(256, 46);
             this.buttonDefault.Name = "buttonDefault";
             this.buttonDefault.Size = new System.Drawing.Size(116, 23);
             this.buttonDefault.TabIndex = 13;
@@ -474,6 +487,17 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Gesture Setup";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxGestures
+            // 
+            this.checkBoxGestures.AutoSize = true;
+            this.checkBoxGestures.Location = new System.Drawing.Point(367, 292);
+            this.checkBoxGestures.Name = "checkBoxGestures";
+            this.checkBoxGestures.Size = new System.Drawing.Size(98, 17);
+            this.checkBoxGestures.TabIndex = 2;
+            this.checkBoxGestures.Text = "Using Gestures";
+            this.checkBoxGestures.UseVisualStyleBackColor = true;
+            this.checkBoxGestures.CheckedChanged += new System.EventHandler(this.checkBoxGestures_CheckedChanged);
             // 
             // buttonGestures
             // 
@@ -783,27 +807,16 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "F10 to Start/Stop";
             // 
-            // buttonGesturePreset
+            // buttonMine
             // 
-            this.buttonGesturePreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGesturePreset.Location = new System.Drawing.Point(12, 45);
-            this.buttonGesturePreset.Name = "buttonGesturePreset";
-            this.buttonGesturePreset.Size = new System.Drawing.Size(116, 23);
-            this.buttonGesturePreset.TabIndex = 14;
-            this.buttonGesturePreset.Text = "Gaze Off!";
-            this.buttonGesturePreset.UseVisualStyleBackColor = true;
-            this.buttonGesturePreset.Click += new System.EventHandler(this.buttonGesturePreset_Click);
-            // 
-            // checkBoxGestures
-            // 
-            this.checkBoxGestures.AutoSize = true;
-            this.checkBoxGestures.Location = new System.Drawing.Point(367, 292);
-            this.checkBoxGestures.Name = "checkBoxGestures";
-            this.checkBoxGestures.Size = new System.Drawing.Size(98, 17);
-            this.checkBoxGestures.TabIndex = 2;
-            this.checkBoxGestures.Text = "Using Gestures";
-            this.checkBoxGestures.UseVisualStyleBackColor = true;
-            this.checkBoxGestures.CheckedChanged += new System.EventHandler(this.checkBoxGestures_CheckedChanged);
+            this.buttonMine.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMine.Location = new System.Drawing.Point(134, 45);
+            this.buttonMine.Name = "buttonMine";
+            this.buttonMine.Size = new System.Drawing.Size(116, 23);
+            this.buttonMine.TabIndex = 13;
+            this.buttonMine.Text = "Mine Simple";
+            this.buttonMine.UseVisualStyleBackColor = true;
+            this.buttonMine.Click += new System.EventHandler(this.buttonMine_Click);
             // 
             // Start
             // 
@@ -917,5 +930,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonGesturePreset;
         private System.Windows.Forms.CheckBox checkBoxGestures;
+        private System.Windows.Forms.Button buttonMine;
     }
 }

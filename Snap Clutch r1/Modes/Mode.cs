@@ -37,6 +37,11 @@ namespace SnapClutch.Modes
             return argMouse;
         }
 
+        public virtual MOUSESTATE Execute(Point argGazePos, MOUSESTATE argMouse)
+        {
+            return argMouse;
+        }
+
         public virtual string GetModeName()
         {
             return modeName;

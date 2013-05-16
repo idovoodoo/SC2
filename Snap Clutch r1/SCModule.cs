@@ -62,6 +62,9 @@ namespace SnapClutch
         private static ModeMouseLookAroundCatB myModeMouseLookAroundCatB; 
         //eyeguitar
         private static ModeStrings myModeStrings;
+        //minecraft
+        private static ModeMinecraftLocoGazeOnly myModeMinecraftLocoGazeOnly;
+        private static ModeMinecraftLookGazeOnly myModeMinecraftLookGazeOnly; 
 
         public static ModeIndicator myModeIndicator;
 
@@ -137,7 +140,9 @@ namespace SnapClutch
             myModeMouseLookAroundCatB = new ModeMouseLookAroundCatB(); 
             //eyeguitar
             myModeStrings = new ModeStrings();
-
+            //minecraft
+            myModeMinecraftLocoGazeOnly = new ModeMinecraftLocoGazeOnly();
+            myModeMinecraftLookGazeOnly = new ModeMinecraftLookGazeOnly();
             listOfModes = new List<Mode>();
             
             listOfModes.Add(myModeDwellClickLeft);
@@ -154,6 +159,8 @@ namespace SnapClutch
             listOfModes.Add(myModeMouseLocomotionCatB);
             listOfModes.Add(myModeMouseLookAroundCatB);
             listOfModes.Add(myModeStrings);
+            listOfModes.Add(myModeMinecraftLocoGazeOnly);
+            listOfModes.Add(myModeMinecraftLookGazeOnly);
 
             //setup default modes
             myModeCollection.SetModeLeft(myModeDwellClickLeft);
@@ -200,6 +207,14 @@ namespace SnapClutch
             myModeCollection.SetModeRight(myModeDwellClickRight);
             myModeCollection.SetModeTop(myModeMouseLocomotionCatA);
             myModeCollection.SetModeBottom(myModeMouseLookAroundCatA);
+        }
+
+        public void SetMinecraftModeMouse()
+        {
+            myModeCollection.SetModeLeft(myModeBlank);
+            myModeCollection.SetModeRight(myModeBlank);
+            myModeCollection.SetModeTop(myModeMinecraftLocoGazeOnly);
+            myModeCollection.SetModeBottom(myModeMinecraftLookGazeOnly);
         }
 
         public void SetBlankMode()
@@ -284,7 +299,7 @@ namespace SnapClutch
                         break;
                     case 2:
                         // bottom
-                        msAfter = myModeCollection.GetModeBottom().Execute(gazePos, msBefore, gazeOverlay); msBefore = msAfter;
+                        msAfter = myModeCollection.GetModeBottom().Execute(gazePos, msBefore, gazeOverlay);
                         msBefore = msAfter;
                         break;
                     case 3:
@@ -745,6 +760,7 @@ namespace SnapClutch
                 // glance off right toggle
                 else if (argGlance == 8)
                 {
+                    
                     //KeyEvent.KeysUp();
                     //modeSet.GetActiveModeCollection().SetActiveMode(8);
                     //glance = 8;
@@ -756,6 +772,7 @@ namespace SnapClutch
                 // glance off top toggle
                 else if (argGlance == 5)
                 {
+                    
                     //ResetMouseStates();
                     //KeyEvent.KeysUp();
                     //modeSet.GetActiveModeCollection().SetActiveMode(5);

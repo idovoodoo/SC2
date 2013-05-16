@@ -1688,6 +1688,12 @@ namespace SnapClutch
             SetComboBoxes();
         }
 
+        private void buttonMine_Click(object sender, EventArgs e)
+        {
+            scModule.SetMinecraftModeMouse();
+            SetComboBoxes();
+        }
+
         #region Mouse Controls
 
         private void TurnLeft()
@@ -1765,6 +1771,8 @@ namespace SnapClutch
                 usingGestures = true;
             }
         }
+
+
 
 
 

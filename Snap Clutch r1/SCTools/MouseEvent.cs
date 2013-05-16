@@ -189,6 +189,8 @@ namespace SnapClutch.SCTools
         public bool dKey;
         public bool wKey;
         public bool sKey;
+        public bool shiftKey;
+        public bool spaceKey;
 
         public bool numKey2;
         public bool numKey4;
