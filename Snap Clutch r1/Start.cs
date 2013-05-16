@@ -46,6 +46,12 @@ namespace SnapClutch
         [DllImport("user32.dll")]
         static extern bool GetCursorPos(ref Point pt);
 
+        [DllImportAttribute("User32.dll")]
+        private static extern int FindWindow(String ClassName, String WindowName);
+
+        [DllImportAttribute("User32.dll")]
+        private static extern IntPtr SetForegroundWindow(int hWnd);
+
         private enum EyeTracker { Mouse = 0, ITU = 1, Tobii = 2, SMI = 3, Dev = 4 };
         private int eyeTrackerType;
         private string configFileName = "configData.xml";
@@ -75,6 +81,7 @@ namespace SnapClutch
         private string userName = "";
         private StreamWriter sw;
         private StreamReader sr;
+        private string handleTo = "";
 
         //diagnostic test 
         SnapClutch.Diagnostic.Zones zones;
@@ -1075,6 +1082,8 @@ namespace SnapClutch
         private void buttonContinue_Click(object sender, EventArgs e)
         {
             snapClutchOn = true;
+            
+
             StartEyeTracker();
 
             // minimise application... eventually minimise this to icon bar and not task bar!
@@ -1085,7 +1094,37 @@ namespace SnapClutch
             // set default mode collection mode
             scModule.StartSnapClutch();
 
+            if (handleTo.Equals("minecraft"))
+            {
+                GetHandleToMinecraft();
+            }
             
+        }
+
+        /// <summary>
+        /// Get a handle to the minecraft window and activate it
+        /// </summary>
+        private void GetHandleToMinecraft()
+        {
+            //Find the window, using the CORRECT Window Title, for example, Notepad
+            int hWnd = FindWindow(null, "MinecraftEdu 1.5.1 classroom (stable version build 9)");
+            if (hWnd > 0) //If found
+            {
+                SetForegroundWindow(hWnd); //Activate it
+                Console.WriteLine("Minecraft window found and activated!");
+
+                //press escape key
+                KeyEvent.EscKeyDown();
+                KeyEvent.EscKeyUp();
+
+
+                Console.WriteLine(Cursor.Position.ToString());
+
+            }
+            else //Not Found
+            {
+                MessageBox.Show("Minecraft not running!");
+            }
         }
 
         /// <summary>
@@ -1691,6 +1730,7 @@ namespace SnapClutch
         private void buttonMine_Click(object sender, EventArgs e)
         {
             scModule.SetMinecraftModeMouse();
+            handleTo = "minecraft";
             SetComboBoxes();
         }
 

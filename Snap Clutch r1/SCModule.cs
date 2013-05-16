@@ -64,7 +64,8 @@ namespace SnapClutch
         private static ModeStrings myModeStrings;
         //minecraft
         private static ModeMinecraftLocoGazeOnly myModeMinecraftLocoGazeOnly;
-        private static ModeMinecraftLookGazeOnly myModeMinecraftLookGazeOnly; 
+        private static ModeMinecraftLookGazeOnly myModeMinecraftLookGazeOnly;
+        private static ModeMinecraftCBlock myModeMinecraftCBlock;
 
         public static ModeIndicator myModeIndicator;
 
@@ -143,6 +144,8 @@ namespace SnapClutch
             //minecraft
             myModeMinecraftLocoGazeOnly = new ModeMinecraftLocoGazeOnly();
             myModeMinecraftLookGazeOnly = new ModeMinecraftLookGazeOnly();
+            myModeMinecraftCBlock = new ModeMinecraftCBlock();
+
             listOfModes = new List<Mode>();
             
             listOfModes.Add(myModeDwellClickLeft);
@@ -161,6 +164,7 @@ namespace SnapClutch
             listOfModes.Add(myModeStrings);
             listOfModes.Add(myModeMinecraftLocoGazeOnly);
             listOfModes.Add(myModeMinecraftLookGazeOnly);
+            listOfModes.Add(myModeMinecraftCBlock);
 
             //setup default modes
             myModeCollection.SetModeLeft(myModeDwellClickLeft);

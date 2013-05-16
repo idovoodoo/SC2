@@ -203,7 +203,7 @@ namespace SnapClutch.SCTools
         public int gazeY1;
         public int gazeY2;
         public int stringSelected; // the string currently selected by the user
-
+        public int mcBlock;
         public bool joystickToolglass;
     }
 
